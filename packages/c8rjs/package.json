@@ -1,0 +1,23 @@
+{
+	"name": "c8rjs",
+	"version": "0.0.1",
+	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"files": [
+		"dist"
+	],
+	"types": "dist/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rollup -c",
+		"develop": "rollup -cw"
+	},
+	"devDependencies": {
+		"csstype": "^3.0.1"
+	},
+	"dependencies": {}
+}
