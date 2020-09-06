@@ -1,4 +1,19 @@
 {
-	"files": [], // do not remove!
-	"extends": "../../tsconfig.settings.json"
+	"compilerOptions": {
+		"noImplicitAny": false,
+		"target": "es5",
+		"module": "esnext",
+		"lib": ["dom", "es2017"],
+		"jsx": "react",
+		"preserveSymlinks": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"pretty": true,
+		"sourceMap": true,
+		"inlineSources": true,
+		"resolveJsonModule": true,
+		"strict": true
+	},
+	"include": ["./src/**/*.tsx", "./src/**/*.ts"],
+	"exclude": ["node_modules", "dist", "es", "lib"]
 }

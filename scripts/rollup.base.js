@@ -1,8 +1,8 @@
-import typescript from 'rollup-plugin-typescript2';
-import url from 'rollup-plugin-url';
+import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
 
 export const createRollupConfig = pkg => ({
-	input: ['src/index.ts'],
+	input: ['./src/index.ts'],
 	output: [
 		{
 			file: pkg.main,
@@ -18,10 +18,5 @@ export const createRollupConfig = pkg => ({
 		},
 	],
 	external: [...Object.keys(pkg.peerDependencies || {})],
-	plugins: [
-		typescript({
-			clean: true,
-			rollupCommonJSResolveHack: false,
-		}),
-	],
+	plugins: [resolve(), typescript()],
 });

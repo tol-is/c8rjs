@@ -13,30 +13,14 @@
 		"access": "public"
 	},
 	"scripts": {
-		"ts": "tsc ./src/index.ts ",
-		"build": "rollup -c",
-		"develop": "rollup -cw",
+		"build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
+		"develop": "npm-run-all --parallel rollup:dev tsc:decl",
+		"rollup:dev": "rollup -cw",
+		"tsc:decl": "tsc -w -d --emitDeclarationOnly --declarationDir dist",
 		"lint": "tslint"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.6.0",
-		"@types/jest": "^24.0.18",
-		"@types/node": "^12.7.5",
-		"babel-loader": "8.0.6",
-		"eslint": "^7.5.0",
-		"jest": "^24.9.0",
-		"jest-matcher-css": "^1.1.0",
-		"jshint": "^2.10.2",
-		"lerna": "^3.20.2",
-		"npm-run-all": "^4.1.5",
-		"rollup": "^1.19.4",
-		"rollup-plugin-typescript2": "^0.27.2",
-		"rollup-plugin-url": "^2.2.2",
-		"tslint": "^6.1.2",
-		"ts-jest": "^24.1.0",
-		"ts-node": "^8.10.2",
-		"typescript": "3.6.2",
-		"csstype": "^3.0.1"
+		"typescript": "3.8.3"
 	},
 	"dependencies": {}
 }

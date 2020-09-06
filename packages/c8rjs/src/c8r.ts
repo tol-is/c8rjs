@@ -1,4 +1,3 @@
-export * from './types';
 import { CompositorConfig } from './types';
 import { textTrim } from './text-trim';
 import { get } from './get';
