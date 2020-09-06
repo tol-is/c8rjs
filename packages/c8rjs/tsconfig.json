@@ -1,8 +1,4 @@
 {
-	"extends": "../../tsconfig.settings.json",
-	"compilerOptions": {
-		"outDir": "./dist",
-		"baseUrl": "./"
-	},
-	"include": ["src/**/*"]
+	"files": [], // do not remove!
+	"extends": "../../tsconfig.settings.json"
 }

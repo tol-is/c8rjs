@@ -1,8 +1,7 @@
+export * from './types';
 import { CompositorConfig } from './types';
 import { textTrim } from './text-trim';
 import { get } from './get';
-
-export * from './types';
 
 export class c8rjs {
 	config: CompositorConfig;

@@ -8,18 +8,20 @@ export const createRollupConfig = pkg => ({
 			file: pkg.main,
 			format: 'cjs',
 			exports: 'named',
+			sourcemap: true,
 		},
 		{
 			file: pkg.module,
 			format: 'es',
 			exports: 'named',
+			sourcemap: true,
 		},
 	],
 	external: [...Object.keys(pkg.peerDependencies || {})],
 	plugins: [
 		typescript({
 			clean: true,
-			typescript: require('typescript'),
+			rollupCommonJSResolveHack: false,
 		}),
 	],
 });
