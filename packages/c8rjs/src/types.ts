@@ -11,7 +11,7 @@ export interface FontConfig {
 export interface FontOpenType {
 	familyName: string;
 	fallback: string;
-	upm: number;
+	unitsPerEm: number;
 	xHeight?: number;
 	capHeight: number;
 	lineGap: number;
@@ -19,6 +19,13 @@ export interface FontOpenType {
 	descent: number;
 	weight: number;
 	italic: boolean;
+}
+
+export interface C8rTypeParams {
+	fontSize: number;
+	leading: number;
+	font: string;
+	alignToGrid?: boolean;
 }
 
 export type TextTrimMetrics = {

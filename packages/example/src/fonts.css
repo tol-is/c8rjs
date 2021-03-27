@@ -1,0 +1,34 @@
+@font-face {
+	font-family: 'averta';
+	src: url('./fonts/averta-semibold-webfont.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'cera';
+	src: url('./fonts/CeraPRO-Regular.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'plex';
+	src: url('./fonts/IBMPlexSans-SemiBold.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'mark';
+	src: url('./fonts/MarkOT-Medium.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'peridot';
+	src: url('./fonts/peridotbeta-bold.woff') format('woff2');
+	font-style: normal;
+	font-weight: 400;
+}

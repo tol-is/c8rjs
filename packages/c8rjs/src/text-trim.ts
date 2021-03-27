@@ -13,25 +13,25 @@ export const textTrim = ({
 	baseline,
 	fontSize,
 	leading = 0,
-	alignToGrid = false,
+	alignToGrid = true,
 }: TextTrimParams): TextTrimMetrics => {
 	// ratios
-	const preventCollapse = 0.4;
+	const preventCollapse = 1;
 	const descentAbs = Math.abs(font.descent);
-	const capHeightRatio = font.capHeight / font.upm;
-	const ascentRatio = (font.ascent - font.capHeight) / font.upm;
-	const descentRatio = descentAbs / font.upm;
+	const capHeightRatio = font.capHeight / font.unitsPerEm;
+	const ascentRatio = (font.ascent - font.capHeight) / font.unitsPerEm;
+	const descentRatio = descentAbs / font.unitsPerEm;
 
 	// bounding box
 	const boundingBox = font.ascent + descentAbs + font.lineGap;
-	const boundingBoxHeight = (boundingBox / font.upm) * fontSize;
+	const boundingBoxHeight = (boundingBox / font.unitsPerEm) * fontSize;
 
 	// type height
 	const capSize = capHeightRatio * fontSize;
 	const baselineRows = capSize / baseline;
 	const typeRows = Math.round(baselineRows);
-	// const typeRows = capSize / baseline % 1 < 0.8 ? Math.floor(baselineRows) : Math.ceil(baselineRows);
-	const typeHeight = alignToGrid ? typeRows * baseline : capSize;
+
+	const typeHeight = typeRows * baseline;
 
 	// leading
 	const leadingValue = alignToGrid ? Math.round(leading) : leading;
@@ -44,20 +44,24 @@ export const textTrim = ({
 	const typeLineHeight = typeHeight + typeLineGap;
 
 	// leading trim
-	const lineGapHeight = (font.lineGap / font.upm) * fontSize;
+	const lineGapHeight = (font.lineGap / font.unitsPerEm) * fontSize;
 	const lineHeightOffset =
 		(boundingBoxHeight - typeLineHeight - lineGapHeight) / 2;
 
 	const trimTop = ascentRatio * fontSize - lineHeightOffset;
 	const trimBottom = descentRatio * fontSize - lineHeightOffset;
 
-	// align to baseline
-	const paddingTop = preventCollapse; //alignToGrid
-	// ? preventCollapse + ((trimBottom + trimTop) % baseline)
-	// : preventCollapse;
-
 	const trimTopSize = trimTop * -1 - preventCollapse;
 	const trimBottomSize = trimBottom * -1 - preventCollapse;
+
+	const rowHeight = typeLineHeight + 2 + trimTopSize + trimBottomSize;
+
+	// align to baseline
+	const paddingTop = alignToGrid
+		? preventCollapse +
+		  Math.ceil(rowHeight / baseline) * baseline -
+		  rowHeight
+		: preventCollapse;
 
 	return {
 		fontFamily: font.familyName,

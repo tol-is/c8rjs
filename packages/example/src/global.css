@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary,
+ul,
+ol {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	outline: none;
+	background: transparent;
+	border: none;
+}
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	word-wrap: break-word;
+	font-kerning: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+a {
+	color: inherit;
+}
+
+a:hover {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: normal;
+}
+
+img,
+svg {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	width: 100%;
+}
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	background-color: #060606;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	word-wrap: break-word;
+	font-kerning: normal;
+	font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+	font-size: 0.85rem;
+}
+
+* {
+	border: 0;
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+}

@@ -1,7 +1,7 @@
 export const playFair = {
 	familyName: 'Playfair Display',
 	fallback: 'serif',
-	upm: 1000,
+	unitsPerEm: 1000,
 	xHeight: 514,
 	capHeight: 708,
 	ascent: 1082,
@@ -14,7 +14,7 @@ export const playFair = {
 export const inter = {
 	familyName: 'Inter',
 	fallback: 'sans-serif',
-	upm: 2816,
+	unitsPerEm: 2816,
 	xHeight: 1536,
 	capHeight: 2048,
 	lineGap: 0,

@@ -1,12 +1,12 @@
-import { c8rjs } from './';
+import { C8R } from './';
 import { merge } from './merge';
 import { baseConfig } from './mock';
 
-test('matrix', () => {
+test('type', () => {
 	const config = merge(baseConfig, { alignToGrid: true });
-	const compositor = new c8rjs(config);
+	const compositor = new C8R(config);
 
-	const metrics = compositor.text({
+	const metrics = compositor.type({
 		fontSize: 24,
 		leading: 2,
 		font: 'inter',

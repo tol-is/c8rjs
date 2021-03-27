@@ -1,23 +1,18 @@
-import { CompositorConfig } from './types';
+import type { CompositorConfig, C8rTypeParams, FontOpenType } from './types';
 import { textTrim } from './text-trim';
 import { get } from './get';
 
-export class c8rjs {
+export class C8R {
 	config: CompositorConfig;
 
 	constructor(config: CompositorConfig) {
 		this.config = config;
 	}
 
-	text = (props: {
-		fontSize: number;
-		leading: number;
-		font: string;
-		alignToGrid?: boolean;
-	}) => {
+	type = (props: C8rTypeParams) => {
 		const { baseline, fonts } = this.config;
 		const { fontSize, leading, alignToGrid = true } = props;
-		const fontOT = get(fonts, props.font, null);
+		const fontOT: FontOpenType = get(fonts, props.font, null);
 
 		const trimMetrics = textTrim({
 			font: fontOT,
@@ -32,6 +27,7 @@ export class c8rjs {
 			fontFamily: trimMetrics.fontFamily,
 			fontWeight: trimMetrics.fontWeight,
 			fontStyle: trimMetrics.fontStyle,
+
 			lineHeight: `${trimMetrics.lineHeight}px`,
 			fontSize: `${trimMetrics.fontSize}px`,
 			paddingTop: `${trimMetrics.paddingTop}px`,
@@ -52,4 +48,4 @@ export class c8rjs {
 	};
 }
 
-export default c8rjs;
+export default C8R;
